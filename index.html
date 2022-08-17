@@ -12,11 +12,21 @@
 
      <!-- sampai menit sembilan video ke 2 -->
     <div id="app">
-       <p> {{title}} - {{author}} - {{age}}</p>
+       <div v-if="showBook">
+            <!--call data   -->
+            <p> {{title}} - {{author}} - {{age}}</p>
+            <!--  function data -->
+            <button v-on:click="age++">Increase Age</button>
+            <button v-on:click="age--">Decrease Age</button>
+            <div @click="changeTitle('OathBringe')"> change book</div>
+        </div>
 
-        <button v-on:click="age++">Increase Age</button>
-        <button v-on:click="age--">Decrease Age</button>
-        <div @click="changeTitle('OathBringe')"> change book</div>
+        <button @click="toggleShowBooks">
+            <span v-if="showBook">Hide Book</span>
+            <span v-else>Shoow Book</span>
+        </button>
+
+        <div v-show="showBook">Currently Showing Book</div>
     </div>
     <script src="app.js"></script>
 </body>
