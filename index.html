@@ -11,7 +11,13 @@
     <h1>hallo vue</h1>
 
      <!-- sampai menit sembilan video ke 2 -->
-    <div id="app"><h2>I am a template Now</h2></div>
+    <div id="app">
+       <p> {{title}} - {{author}} - {{age}}</p>
+
+        <button v-on:click="age++">Increase Age</button>
+        <button v-on:click="age--">Decrease Age</button>
+        <div @click="changeTitle('OathBringe')"> change book</div>
+    </div>
     <script src="app.js"></script>
 </body>
 </html>
