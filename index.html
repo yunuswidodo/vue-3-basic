@@ -20,6 +20,7 @@
             background-color: aqua;
         }
         li{
+            margin-bottom: 100px;
             list-style-type: none;
             background: #fff;
             margin: 20px auto;
@@ -30,12 +31,24 @@
             justify-content: space-between;
         }
 
+        li.fav{
+            background: #ff9ed2;
+            color: white;
+        }
+
+
+
+        img{
+            width: 80px;
+            height: 80px;
+        }
+
     </style>
 </head>
 <body>
     <h1>hallo vue</h1>
 
-     <!-- sampai menit sembilan video ke 2 -->
+     <!-- sampai menit sembilan video ke 3 menit ke 24.15 -->
     <div id="app">
        <div v-if="showBook">
             <!--call data   -->
@@ -54,17 +67,23 @@
 
         <div v-show="showBook">Currently Showing Book</div>
 
+        <!-- computed -->
+        <br>
+        <p>----------------------------------------computed--------------------------</p>
+        <p>{{filteredBooks}}</p>
         <!-- array  -->
         <br>
         <p>---------------------------------------array-------------------------</p>
         <div v-if="showBook">
             <ul>
+                <br>
                 <!-- books object dari file js dimasukan kedalam object book -->
-                <li v-for="book in books" :class="{fav: book.isFav}">
+                <li v-for="book in filteredBooks" :class="{fav: book.isFav}" @click="toggleFav(book)">
                     <img :src="book.img" alt="">
                     <h3>{{book.title}}</h3>
                     <p>{{book.author}}</p>
                 </li>
+                <br>
             </ul>
         </div>   
         
