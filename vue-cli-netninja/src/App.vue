@@ -1,8 +1,10 @@
 <script setup>
+  import Modal from './components/Modal.vue';
 </script>
 
 <template>
   <h1>{{title}}</h1>
+  <Modal/>
   <input type="text" ref="name">
   <button @click="handleClick">Click me</button>
 </template>
@@ -10,6 +12,9 @@
 <script>
   export default {
     name: 'App',
+    components : {
+      Modal
+    },
     data() {
       return {
         title: 'My Fist Vue App Yunus'

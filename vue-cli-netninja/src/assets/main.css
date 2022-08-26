@@ -1,10 +1,11 @@
 @import "./base.css";
 
 #app {
-  max-width: 1280px;
   margin: 0 auto;
-  padding: 2rem;
-
+  padding-top: 2px;
+  padding-left: 2px;
+  padding-right: 2rem;
+  padding-bottom: 2rem;
   font-weight: normal;
 }
 
@@ -21,16 +22,17 @@ a,
   }
 }
 
-@media (min-width: 1024px) {
+/* ini yang membuat satu componet tidak full screen */
+/* @media (min-width: 1024px) {
   body {
     display: flex;
     place-items: center;
   }
 
-  /* ini yang membuat satu componet tidak full screen */
-  /* #app {
+  
+  #app {
     display: grid;
     grid-template-columns: 1fr 1fr;
     padding: 0 2rem;
-  } */
-}
+  }
+} */
