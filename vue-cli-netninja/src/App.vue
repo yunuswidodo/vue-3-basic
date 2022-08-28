@@ -4,7 +4,7 @@
 
 <template>
   <h1>{{title}}</h1>
-  <Modal/>
+  <Modal :header="header" :text="text" theme="sale"/>
   <input type="text" ref="name">
   <button @click="handleClick">Click me</button>
 </template>
@@ -17,7 +17,9 @@
     },
     data() {
       return {
-        title: 'My Fist Vue App Yunus'
+        title: 'My Fist Vue App Yunus',
+        header: 'Sign up for the Giveway!',
+        text: 'Grab your ninja swag for half price!'
       }
     },
     methods:{

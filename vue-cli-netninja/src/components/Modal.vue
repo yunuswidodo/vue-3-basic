@@ -1,17 +1,23 @@
 <template>
     <div class="backdrop"> 
-      <div class="modal">
-        <h1>Modal Title</h1>
-        <p>modal content</p>
+      <div class="modal" :class="{sale: theme === 'sale'}">
+        <h1>{{header}}</h1>
+        <p>{{text}}</p>
       </div>
     </div>
 </template>
+
+<script>
+export default {
+    // registasi componen pada page app vue
+    props:['header', 'text', 'theme']
+}
+</script>
 
 <style scoped>
     .modal {
         width: 400px;
         padding: 20px;
-
         margin: 100px auto;
         display: flex;
         flex-direction: column;
@@ -35,5 +41,14 @@
 
     p {
         font-style: normal;
+    }
+
+    .modal.sale{
+        background: crimson;
+        color: white;
+    }
+
+    .modal.sale h1 {
+        color: white;
     }
 </style>
