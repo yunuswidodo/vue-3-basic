@@ -3,9 +3,11 @@
 </script>
 
 <template>
-  <h1>{{title}}</h1>
   <div v-if="showModal">
-      <Modal :header="header" :text="text" theme="sale" @close="toggleModal"/>
+      <Modal theme="sale" @close="toggleModal">
+        <h1> My Fist Vue App Yunus, </h1>
+        <p>Sign up for the Giveway! </p>
+      </Modal>
   </div>
 
   <button @click="toggleModal">open modal</button>
@@ -19,7 +21,7 @@
   export default {
     name: 'App',
     components : {
-      Modal
+    Modal
     },
     data() {
       return {
@@ -33,6 +35,7 @@
       handleClick(){
         console.log(this.$refs.name);
         // menambah class pada componen
+        // $nerfd => similar of key || mengendle focus pada saat tombol di clik
         this.$refs.name.classList.add('active');
         this.$refs.name.focus();
       },

@@ -1,6 +1,7 @@
 <template>
     <div class="backdrop" @click="closeModal"> 
       <div class="modal" :class="{sale: theme === 'sale'}">
+        <!-- using prop -->
         <h1>{{header}}</h1>
         <p>{{text}}</p>
       </div>
@@ -9,11 +10,9 @@
 
 <script>
 export default {
-    // registasi componen pada page app vue
-    props:['header', 'text', 'theme'],
     methods:{
         closeModal(){
-            // emit itu apa
+            // emit adalah pengemangan di panggil di app.Vue
             this.$emit('close')
         }
     }
@@ -28,7 +27,7 @@ export default {
         display: flex;
         flex-direction: column;
         align-items: center;
-        background: white;
+        background: red;
         border-radius:10px ;
     }
 
