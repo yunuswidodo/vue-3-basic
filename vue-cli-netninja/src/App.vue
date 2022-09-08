@@ -4,7 +4,11 @@
 
 <template>
   <h1>{{title}}</h1>
-  <Modal :header="header" :text="text" theme="sale"/>
+  <p>Welcome</p>
+  <div v-if="showModal">
+    <Modal :header="header" :text="text" theme="sale" @close="toggleModal"/>
+  </div>
+  <button @click="toggleModal">Open Modal</button>
   <input type="text" ref="name">
   <button @click="handleClick">Click me</button>
 </template>
@@ -19,17 +23,24 @@
       return {
         title: 'My Fist Vue App Yunus',
         header: 'Sign up for the Giveway!',
-        text: 'Grab your ninja swag for half price!'
+        text: 'Grab your ninja swag for half price!',
+        showModal: false
+
       }
     },
     methods:{
-      handleClick(){
-        console.log(this.$refs.name);
-        // menambah class pada componen
-        this.$refs.name.classList.add('active');
-        this.$refs.name.focus();
-        // sampai video ke  3 menit ke 29.34
+      toggleModal(){
+        this.showModal = !this.showModal
       }
+
+      // sampai video 20:00 mau menutup backdrop 
+      // handleClick(){
+      //   console.log(this.$refs.name);
+      //   // menambah class pada componen
+      //   this.$refs.name.classList.add('active');
+      //   this.$refs.name.focus();
+      //   // sampai video ke  3 menit ke 29.34
+      // }
     }
   }
 </script>
