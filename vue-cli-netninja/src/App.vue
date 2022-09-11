@@ -8,7 +8,7 @@
   <div v-if="showModal">
     <Modal :header="header" :text="text" theme="sale" @close="toggleModal"/>
   </div>
-  <button @click="toggleModal">Open Modal</button>
+  <button @click.alt="toggleModal">Open Modal(alt)</button>
   <input type="text" ref="name">
   <button @click="handleClick">Click me</button>
 </template>
@@ -32,15 +32,6 @@
       toggleModal(){
         this.showModal = !this.showModal
       }
-
-      // sampai video 20:00 mau menutup backdrop 
-      // handleClick(){
-      //   console.log(this.$refs.name);
-      //   // menambah class pada componen
-      //   this.$refs.name.classList.add('active');
-      //   this.$refs.name.focus();
-      //   // sampai video ke  3 menit ke 29.34
-      // }
     }
   }
 </script>
