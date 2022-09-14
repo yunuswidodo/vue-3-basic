@@ -5,7 +5,7 @@
 <template>
   <h1>{{title}}</h1>
   <p>Welcome</p>
-  <div v-if="showModal">
+  <teleport to="#modals" v-if="showModal">
     <Modal theme="sale" @close="toggleModal">
         <template v-slot:links>
           <a href="">sign up now</a>
@@ -14,13 +14,13 @@
         <h1>Ninja Givaway</h1> 
         <p>Grab your Ninja Swag For Half Price!</p>
     </Modal>
-  </div>
-  <div v-if="showModalTwo">
+  </teleport>
+  <teleport to="#modals" v-if="showModalTwo">
     <Modal @close="toggleModalTwo">
         <h1>Sign Up to newsletter</h1> 
         <p>For Update and promo code</p>
     </Modal>
-  </div>
+  </teleport>
 
   <button @click.alt="toggleModal">Open Modal(alt)</button>
   <button @click="toggleModalTwo">Open Modal</button>
